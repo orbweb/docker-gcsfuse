@@ -4,7 +4,11 @@ FUSE in docker requires extra privledges:
 * ```--cap-add SYS_ADMIN```
 * ```--device /dev/fuse```
 
-Environment Variable Options:
+```bash
+docker run ... --device /dev/fuse gcsfuse --cap-add SYS_ADMIN IMAGE BUCKET_NAME
+```
+
+# Environment Variable Options:
 * ```GOOGLE_APPLICATION_CREDENTIALS```: ```key-file```
 * ```GCSFUSE_USER```:
 * ```GCSFUSE_MOUNTPOINT```:
@@ -19,8 +23,3 @@ Environment Variable Options:
 * ```GCSFUSE_LIMIT_OPS```: ```limit-ops-per-sec```
 * ```GCSFUSE_CACHE_STAT_TTL```: ```stat-cache-ttl```
 * ```GCSFUSE_CACHE_TYPE_TTL```: ```type-cache-ttl```
-
-
-```bash
-docker run ... --device /dev/fuse gcsfuse --cap-add SYS_ADMIN IMAGE BUCKET_NAME
-```
